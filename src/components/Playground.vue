@@ -38,12 +38,13 @@
       placeholder="Email"
     />
 
-    <p
-      v-if="!isEmailValid && email.trim() !== '' && isAttempted"
-      class="mt-2 text-sm text-red-500"
-    >
-      {{ 'Please enter a valid email address.' }}
-    </p>
+  <p
+  v-if="!isEmailValid && (email.trim() !== '' || !isRequired) && isAttempted"
+  class="mt-2 text-sm text-red-500"
+>
+  {{ 'Please enter a valid email address.' }}
+</p>
+
     <p
       v-if="isRequired && !isEmailValid && email.trim() === '' && isAttempted"
       class="mt-2 text-sm text-red-500"
@@ -55,7 +56,7 @@
 
 <script lang="ts">
 export default {
-  name: 'LtEmailField',
+  name: 'LtEmailInput',
   props: {
     isRequired: {
       type: Boolean,

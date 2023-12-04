@@ -5,6 +5,8 @@ import Playground from './components/Playground.vue';
 <template>
   <div class="m-5">
     <Playground  :isRequired="false" />
+<div>ss</div>
+     <Playground  :isRequired="true" />
     
   </div>
 </template>
