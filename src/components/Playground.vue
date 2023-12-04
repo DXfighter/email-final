@@ -38,12 +38,13 @@
       placeholder="Email"
     />
 
-  <p
-  v-if="!isEmailValid && (email.trim() !== '' || !isRequired) && isAttempted"
+ <p
+  v-if="!isEmailValid && ((email.trim() !== '' || !isRequired) && isAttempted || email === '')"
   class="mt-2 text-sm text-red-500"
 >
-  {{ 'Please enter a valid email address.' }}
+  {{ email === '' ? '' : 'Please enter a valid email address.' }}
 </p>
+
 
     <p
       v-if="isRequired && !isEmailValid && email.trim() === '' && isAttempted"
